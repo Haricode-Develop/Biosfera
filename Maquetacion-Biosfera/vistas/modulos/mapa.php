@@ -6,9 +6,7 @@ $conexion = new Conexion1();
   <div id="logo">
     <img src="vistas/img/logo_completo.png" alt="">
   </div>
-  <div id="info">
-    <i class="fa-solid fa-circle-info"></i>
-  </div>
+
   <ul id="social-sidebar">
     <li>
       <a id="btnIcon" onclick="showPopup(popup)">
@@ -27,67 +25,73 @@ $conexion = new Conexion1();
         <span>Clima</span>
       </a>
     </li>
-   <li>
-   <a onclick="showPopup(submenuEstacionesGeneral)">
+    <li class="submenu-nav-1">
+      <a onclick="showPopup(submenuEstacionesGeneral)">
         <i class="fa-solid fa-layer-group li-submenu-opciones"></i>
         <span>Opciones</span>
       </a>
-   </li>
-</ul>
-
- 
-
-  <section id="datos-actuales">
-    <h1>Datos Actuales</h1>
-    <ul>
-      <?php //$clase->datosVentanaPrincipal('Temperatura') ?>
-      <li>
-        <i class="fa-solid fa-temperature-three-quarters"></i> <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
-      </li>
-      <li><i class="fa-solid fa-cloud-rain"></i>
-        <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?> %
-      </li>
-      <li><i class="fa-solid fa-droplet"></i> <?php echo ($conexion->datosVentanaPrincipal('Humedad_relativa')); ?> %
-      </li>
-      <li><i class="fa-solid fa-wind"></i>
-        <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> Km/h
-      </li>
-      <li><i class="fa-solid fa-arrow-right"></i>
-        <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
-      </li>
-    </ul>
-  </section>
-
-  <li class="submenus-opciones" id="menuEstaciones1" >
-      <div class="submenus-estaciones" id="submenuEstacionesGeneral" style="visibility: hidden;" >
-        <ul class="submenus-nav">
-          <li class="submenus-nav-li"><a class="submenus-nav-li-a" >Estacion 1</a>
-            <ul id="submenuEstaciones1" class="submenus-nav-menu-2" style="top: 50%; bottom:-50%;">
-              <li><a id="btnIcon" onclick="showPopup(temperatura)" class="submenus-nav-li-a" >Temperatura</a></li>
-              <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" class="submenus-nav-li-a" >Humedad</a></li>
-              <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" class="submenus-nav-li-a" > Velocidad del Viento</a></li>
-              <li><a id="btnIcon" onclick="showPopup(direccion_viento)" class="submenus-nav-li-a" >Direccion del Viento</a></li>
-            </ul>
-          </li>
-          <li class="submenus-nav-li"><a class="submenus-nav-li-a" onclick="showPopup(submenuEstaciones2)" >Estacion 2</a>
-          <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="top: -25px; ">
-              <li><a id="btnIcon" onclick="showPopup(temperatura)" class="submenus-nav-li-a" >Temperatura</a></li>
-              <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" class="submenus-nav-li-a" >Humedad</a></li>
-              <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" class="submenus-nav-li-a" > Velocidad del Viento</a></li>
-              <li><a id="btnIcon" onclick="showPopup(direccion_viento)" class="submenus-nav-li-a" >Direccion del Viento</a></li>
-            </ul>
+      <ul class="submenus-nav">
+        <li class=""><a class="extender" style="width:100%;">Estacion 1</a>
+          <ul id="submenuEstaciones1" class="submenus-nav-menu-2" style="">
+            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
+            <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
+                Viento</a></li>
+            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            </li>
+          </ul>
         </li>
-          <li class="submenus-nav-li"><a class="submenus-nav-li-a" onclick="showPopup(submenuEstaciones3)" >Estacion 3</a>
+        <li class=""><a class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 2</a>
+          <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="">
+            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
+            <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
+                Viento</a></li>
+            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            </li>
+          </ul>
+        </li>
+        <li class=""><a class="extender" style="width:100%;"onclick="showPopup(submenuEstaciones3)">Estacion 3</a>
           <ul id="submenuEstaciones3" class="submenus-nav-menu-2" style="top: 104px;">
-              <li><a id="btnIcon" onclick="showPopup(temperatura)" class="submenus-nav-li-a" >Temperatura</a></li>
-              <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" class="submenus-nav-li-a" >Humedad</a></li>
-              <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" class="submenus-nav-li-a" > Velocidad del Viento</a></li>
-              <li><a id="btnIcon" onclick="showPopup(direccion_viento)" class="submenus-nav-li-a" >Direccion del Viento</a></li>
-            </ul>
+            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
+            <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
+                Viento</a></li>
+            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            </li>
+          </ul>
         </li>
-        </ul>
-      </div>
+      </ul>
     </li>
+  </ul>
+
+  <ul id="datos-actuales">
+    <li class="datos-actuales-li">
+      <h1>Datos Actuales</h1>
+    </li>
+
+    <?php //$clase->datosVentanaPrincipal('Temperatura') ?>
+    <li>
+      <i class="fa-solid fa-temperature-three-quarters"></i>
+      <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+    </li>
+    <li><i class="fa-solid fa-cloud-rain"></i>
+      <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?> %
+    </li>
+    <li><i class="fa-solid fa-droplet"></i>
+      <?php echo ($conexion->datosVentanaPrincipal('Humedad_relativa')); ?> %
+    </li>
+    <li><i class="fa-solid fa-wind"></i>
+      <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> Km/h
+    </li>
+    <li><i class="fa-solid fa-arrow-right"></i>
+      <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+    </li>
+  </ul>
+  <div id="info">
+    <i class="fa-solid fa-circle-info"></i>
+  </div>
+
 
 
 
@@ -125,23 +129,31 @@ $conexion = new Conexion1();
         <h3>Porcentaje de Humedad</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?>%</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?>%
+          </p>
           <p style="font-size:12px;">Ultimas hora</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+          </p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="contenedor">
-    <div class="overlay" id="overlay" >
+    <div class="overlay" id="overlay">
       <div popup="pop2" class="velocidad_viento popup" id="velocidad_viento">
         <h3>Velocidad del Viento</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+          </p>
           <p style="font-size:12px;">Ultimas hora</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+          </p>
         </div>
       </div>
     </div>
@@ -151,11 +163,15 @@ $conexion = new Conexion1();
     <div class="overlay" id="overlay">
       <div popup="pop3" class="direccion_viento popup" id="direccion_viento">
         <h3>Direccion del Viento</h3>
-        <div class="popup-datos">          
+        <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?></p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+          </p>
           <p style="font-size:12px;">Ultimas hora</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?></p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+          </p>
         </div>
       </div>
     </div>
@@ -167,9 +183,13 @@ $conexion = new Conexion1();
         <h3>Temperatura</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+          </p>
           <p style="font-size:12px;">Ultimas hora</p>
-          <p> <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C</p>
+          <p>
+            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+          </p>
         </div>
       </div>
     </div>
@@ -177,7 +197,7 @@ $conexion = new Conexion1();
 
 
 
-<?php //termina seccion popups?>
+  <?php //termina seccion popups?>
 
   <div id="mapa_div">
     <iframe
