@@ -12,9 +12,11 @@ body {
    scrollbar-width: none;
    overflow: hidden;
 }
-a{
-cursor: pointer;
+
+a {
+   cursor: pointer;
 }
+
 #fa-solid {
    margin-right: 2rem;
 }
@@ -26,11 +28,12 @@ cursor: pointer;
    z-index: 1000;
    list-style: none;
    padding-left: 0px;
+
 }
 
 #social-sidebar li:first-child a {
    border-top-right-radius: 5px;
-   
+
 }
 
 #social-sidebar li:last-child a {
@@ -179,9 +182,11 @@ cursor: pointer;
    cursor: pointer;
    margin: 20px 0 1px 0;
 }
-.popup-datos{
+
+.popup-datos {
    opacity: 0;
 }
+
 /* ------------------------- */
 /* ANIMACIONES */
 /* ------------------------- */
@@ -232,6 +237,7 @@ cursor: pointer;
 
 #datos-actuales ul {
    list-style: none;
+
 }
 
 #datos-actuales {
@@ -242,13 +248,15 @@ cursor: pointer;
    height: 36%;
    width: 250px;
    font-size: 14px;
-   line-height: 50px;
-   position: absolute;
-   left: 100px;
+   position: fixed;
+   left: 104px;
    bottom: 50px;
    text-align: center;
    border-radius: 20px;
-
+   padding: 0;
+}
+#datos-actuales li{
+   padding:3.5%;
 }
 
 #inicio-sesion {
@@ -310,24 +318,24 @@ cursor: pointer;
    background-size: cover;
 }
 
-#contenido{
+#contenido {
    display: flex;
    padding-top: 8%;
    justify-content: center;
 }
 
-#f1{
+#f1 {
    width: 100%;
 }
 
 #formBody {
    background: rgba(0, 0, 0, 0.3);
    display: flex;
-   flex-direction: column;   
+   flex-direction: column;
    align-items: center;
    width: 65%;
-   border-radius: 30px; 
-   padding-bottom: 20px;  
+   border-radius: 30px;
+   padding-bottom: 20px;
 }
 
 #formBody h2 {
@@ -337,11 +345,11 @@ cursor: pointer;
 /*#f1{   
 }*/
 
-#formulario {   
+#formulario {
    color: white;
    display: grid;
    grid-template-columns: repeat(2, 1fr);
-   column-gap: 10%;   
+   column-gap: 10%;
    grid-auto-rows: minmax(100px, auto);
    width: 100%;
    padding-left: 1.5%;
@@ -353,18 +361,18 @@ cursor: pointer;
    cursor: pointer;
 }
 
-.formItem input{
+.formItem input {
    width: 94%;
 }
 
-#formContent{
+#formContent {
    display: flex;
    flex-direction: column;
    align-items: center;
    width: 100%;
 }
 
-#info{
+#info {
    position: fixed;
    bottom: 1%;
 }
@@ -388,108 +396,147 @@ cursor: pointer;
 #registrate {
    width: 20%;
 }
+
 /*SUBMENUS*/
 
 .submenus-estaciones {
-   margin:auto;
+   margin: auto;
    width: 500px;
    padding: 0.3rem;
    border-radius: 10px;
-   /*display: none;
-   position: absolute;*/
+   position: fixed;
+   bottom: 34%;
+   left: 8%;
 }
+
 /*.submenus-opciones:hover > .submenus-estaciones{
 display: block;
 }*/
-.submenus-nav-li-a{
-   text-align: center;
-   font-size: inherit;
-   width: 60%;
-   color: #fff;
-}
-ul, ol{
+
+ul,
+ol {
    list-style: none;
 }
+
+#btnIcon{
+   color: aqua;
+}
+
+.submenu-nav-1 ul {
+   display: none;
+   position: absolute;
+}
+
+.submenu-nav-1:hover>ul {
+   display: block;
+}
+
+.submenus-opciones {
+   position: absolute;
+   bottom: 410px;
+   left: 31px;
+}
+
+.submenus-nav-menu-2 {
+   padding: 0%;
+   left: 100%;
+   font-size: small;
+   background-color: rgba(0, 0, 0, 0.7);
+   border-radius: 15px;
+}
+
 .submenus-nav {
    background-color: rgba(0, 0, 0, 0.7);
    color: white;
    border-radius: 15px;
-   width: 153px;
+   padding: 0%;
+   left: 100%;
+   top: 50%;
 }
-.submenus-opciones{
-   position:absolute;
-   bottom: 410px;
-   left: 31px;
+.submenus-nav li {
+   
+   height: 50px;
+   width: 200px;
 }
-.submenus-nav-menu-2{
-   left: 200px;
-   background-color: rgba(0, 0, 0, 0.7);
-   border-radius: 15px;
+.extender{
+   width:100%;
 }
 .submenus-nav li a {
    text-decoration: none;
-   padding: 10px 15px;
+   width: 100%;
    display: block;
 }
+
 .submenus-nav li a:hover {
    background-color: rgba(255, 255, 255, 0.7);
    color: black;
 }
+
 .submenus-nav li ul {
-   display: none ;
+   display: none;
    position: absolute;
    min-width: 140px;
 }
-.submenus-nav li:hover > ul {
+
+.submenus-nav li:hover>ul {
    display: block;
 }
 
 /*SUBMENUS FINAL*/
-#registrate{
+#registrate {
    width: fit-content;
 }
 
 
-@media only screen and (min-width: 480px){
-   .submenus-opciones{
-      position:absolute;
+@media only screen and (min-width: 480px) {
+   .submenus-opciones {
+      position: absolute;
       bottom: 320px;
       left: 31px;
+   }  
+   .submenus-estaciones{
+      left: 2.568% ;
    }
-   .submenus-nav-menu-2{
+   .submenus-nav-menu-2 {
       width: 30%;
    }
-   #submenuEstaciones1{
+
+   #submenuEstaciones1 {
       bottom: 90px;
    }
-   #submenuEstaciones2{
-   top: -100px;
+
+   #submenuEstaciones2 {
+      top: -100px;
    }
-   .overlay{
-   right: 21%;
-   bottom: 75px;
-   height: 470px;
+
+   .overlay {
+      right: 21%;
+      bottom: 75px;
+      height: 470px;
    }
-   .popup{
-   height: auto;
+
+   .popup {
+      height: auto;
    }
-   #datos-actuales{
-   bottom: 95px;
-   line-height: 39px;
-   left: 60px;
-   height: 31%;
+
+   /*#datos-actuales { --aqui afecta todo lo demas
+      bottom: 95px;
+      line-height: 39px;
+      left: 60px;
+      height: 31%;
+   }*/
+
+   #info {
+      bottom: 12%;
    }
-   #info{
-   bottom: 12%;
-   }
-   
+
 }
 
 
 /*XS DEVICE - PORTRAIT*/
 @media only screen and (max-width: 600px) {
 
-   #logo{
+   #logo {
       width: 75%;
    }
 
@@ -498,35 +545,35 @@ ul, ol{
       width: 65%;
    }
 
-   #formBody{
+   #formBody {
       width: 80%;
    }
 
-   #formulario{      
+   #formulario {
       display: flex;
-      flex-direction: column;      
+      flex-direction: column;
       align-items: center;
       padding-bottom: 5%;
    }
 
-   #contenido{
+   #contenido {
       padding: 0;
       position: relative;
       top: 5%;
    }
 
-   .formItem{
+   .formItem {
       padding-bottom: 5%;
    }
 }
 
 /*SM DEVICE*/
-@media only screen and (min-width: 600px){
-   #logo{
+@media only screen and (min-width: 600px) {
+   #logo {
       width: 50%;
    }
 
-   #contenido{
+   #contenido {
       padding-top: 0%;
       position: relative;
       top: 15%;
@@ -534,20 +581,20 @@ ul, ol{
 }
 
 /*MD DEVICE*/
-@media only screen and (min-width: 768px){
-   #contenido{
+@media only screen and (min-width: 768px) {
+   #contenido {
       padding-top: 8%;
       position: static;
    }
 }
 
 /*LG DEVICE*/
-@media only screen and (min-width: 992px){
-   #logo{
+@media only screen and (min-width: 992px) {
+   #logo {
       width: 30%;
    }
 
-   #contenido{
+   #contenido {
       padding-top: 2.5%;
       position: static;
    }
