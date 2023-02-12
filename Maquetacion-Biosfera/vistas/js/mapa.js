@@ -22,7 +22,7 @@ function initMap() {
         map: map,
         title: titulo,        
         animation: google.maps.Animation.DROP,    
-        icon: 'vistas/js/sensor.svg'
+        icon: 'vistas/img/punto.png'
     });
 
     var infowindow0 = new google.maps.InfoWindow({
