@@ -30,9 +30,9 @@ $conexion = new Conexion1();
         <i class="fa-solid fa-layer-group li-submenu-opciones"></i>
         <span>Opciones</span>
       </a>
-      <ul class="submenus-nav">
-        <li class=""><a class="extender" style="width:100%;">Estacion 1</a>
-          <ul id="submenuEstaciones1" class="submenus-nav-menu-2" style="">
+      <ul class="submenus-nav" id="idEstaciones-menu">
+        <li class=""><a  class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 1</a>
+          <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" style="">
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
@@ -52,7 +52,7 @@ $conexion = new Conexion1();
           </ul>
         </li>
         <li class=""><a class="extender" style="width:100%;"onclick="showPopup(submenuEstaciones3)">Estacion 3</a>
-          <ul id="submenuEstaciones3" class="submenus-nav-menu-2" style="top: 104px;">
+          <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="top: 104px;">
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
