@@ -99,6 +99,7 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
       <div class="popup" id="popup">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(temperatura)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Inicio de Sesión</h3>
         <form action="" class="formulario">
           <fieldset>
