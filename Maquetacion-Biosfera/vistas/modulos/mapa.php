@@ -186,8 +186,9 @@ $conexion = new Conexion1();
     <div class="overlay" id="overlay">
       <div popup="pop4" class="temperatura popup" id="temperatura">
       <div class="exit"> <a class="exit-a" onclick="showPopup(temperatura)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
-        <h3>Temperatura</h3>
+        <h3>Temperatura</h3>        
         <div class="popup-datos">
+        <div id="tempGraph" style="height:270px;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
             <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
@@ -211,3 +212,20 @@ $conexion = new Conexion1();
   </div>
 
   <script src="vistas/js/main.js"></script>
+  <?php 
+    $tiempos = $conexion->getTime();
+    $temp    = $conexion->getDatos(2);
+  ?>
+
+<script type="text/javascript">
+    // obtenemos el array de valores mediante la conversion a json del
+    // array de php
+    var arrayJS=<?php echo json_encode($temp);?>;
+ 
+    // Mostramos los valores del array
+    for(var i=0;i<arrayJS.length;i++)
+    {
+        document.write("<br>"+arrayJS[i]);
+    }
+</script>
+  

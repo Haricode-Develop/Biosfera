@@ -15,6 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="vistas/css/normalize.css">
     <link rel="stylesheet" href="vistas/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
     <title>Biosfera</title>
     <?php $url = ruta::ctrRuta(); ?>
 </head>
@@ -35,6 +36,10 @@
             $inicio = false;
         } else if ($ruta == "datos") {
             include "modulos/datos.registro.php";
+            $inicio = false;
+        }
+        else if ($ruta == "prueba") {
+            include "modulos/prueba.php";
             $inicio = false;
         }
     }

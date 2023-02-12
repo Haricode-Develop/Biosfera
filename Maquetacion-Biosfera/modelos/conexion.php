@@ -46,17 +46,17 @@ class Conexion1
         $connection= new mysqli('localhost', 'root', '', 'weatherstation');        
         $querySelection = "";
         if($opt === 1){
-            $querySelection = ('SELECT times, pressure FROM measures01');
+            $querySelection = ('SELECT pressure FROM measures01');
         }else if($opt === 2){
-            $querySelection = ('SELECT times, temperature FROM measures01');
+            $querySelection = ('SELECT temperature FROM measures01');
         }else if($opt === 3){
-            $querySelection = ('SELECT times, humidity FROM measures01');
+            $querySelection = ('SELECT humidity FROM measures01');
         }else if($opt === 4){
-            $querySelection = ('SELECT times, windspeed FROM measures01');
+            $querySelection = ('SELECT windspeed FROM measures01');
         }else if($opt === 5){
-            $querySelection = ('SELECT times, winddirection FROM measures01');
+            $querySelection = ('SELECT windspeed, winddirection FROM measures01');
         }else if($opt === 6){
-            $querySelection = ('SELECT times, rain FROM measures01');
+            $querySelection = ('SELECT rain FROM measures01');
         }    
         
         $resultQuery = mysqli_query($connection, $querySelection);
@@ -67,14 +67,34 @@ class Conexion1
             while($cantidad > 0){
                 $row = mysqli_fetch_row($resultQuery);
                 array_push($lista, $row);
-                var_dump($row);
-                echo '<br><br>';
-                $cantidad--;
+                $cantidad--;                
             }
+            return $lista;
             
         }else{
             $error = "No se pudo retornar nada";
             return $error;
         }        
+    }
+
+    public function getTime(){
+        $connection= new mysqli('localhost', 'root', '', 'weatherstation');        
+        $querySelection = ('SELECT times FROM measures01');
+        $resultQuery = mysqli_query($connection, $querySelection);
+        
+        if ($resultQuery) {            
+            $lista = [];
+            $cantidad = mysqli_num_rows($resultQuery);
+            while($cantidad > 0){
+                $row = mysqli_fetch_row($resultQuery);
+                array_push($lista, $row);
+                $cantidad--;                
+            }
+            return $lista;
+            
+        }else{
+            $error = "No se pudo retornar nada";
+            return $error;
+        }
     }
 }
