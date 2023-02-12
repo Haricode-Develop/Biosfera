@@ -125,7 +125,9 @@ $conexion = new Conexion1();
 
   <div class="contenedor">
     <div class="overlay" id="overlay">
+    
       <div popup="pop1" class="humedad_porcentaje popup" id="humedad_porcentaje">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(humedad_porcentaje)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Porcentaje de Humedad</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
@@ -144,6 +146,7 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
       <div popup="pop2" class="velocidad_viento popup" id="velocidad_viento">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(velocidad_viento)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Velocidad del Viento</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
@@ -162,6 +165,7 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
       <div popup="pop3" class="direccion_viento popup" id="direccion_viento">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(direccion_viento)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Direccion del Viento</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
@@ -180,6 +184,7 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
       <div popup="pop4" class="temperatura popup" id="temperatura">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(temperatura)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Temperatura</h3>
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
@@ -200,10 +205,7 @@ $conexion = new Conexion1();
   <?php //termina seccion popups?>
 
   <div id="mapa_div">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15403.393733429206!2d-89.67544292033391!3d15.166666280273581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f618cfeb35cd9bf%3A0x5b11e2e2db4acef0!2sSierra%20de%20las%20Minas!5e0!3m2!1ses-419!2sgt!4v1671550207910!5m2!1ses-419!2sgt"
-      style="border:0; width: 100%; height: 100vh; margin:0; padding: 0; " allowfullscreen="true" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div id="map"></div>     
 
   </div>
 

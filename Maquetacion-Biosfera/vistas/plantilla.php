@@ -44,5 +44,9 @@
 
     ?>
 </body>
+<script src="vistas/js/mapa.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdkWYnQWnTO-3AvMWxforB2NtF2Gp0wPM&callback=initMap&libraries=places"
+    async defer></script>
 
 </html>
