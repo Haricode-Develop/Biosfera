@@ -127,10 +127,11 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
     
-      <div popup="pop1" class="humedad_porcentaje popup" id="humedad_porcentaje">
+      <div popup="pop1" class="humedad_porcentaje popup" id="humedad_porcentaje" style="width: 18.5rem;margin-top: 5rem;">
       <div class="exit"> <a class="exit-a" onclick="showPopup(humedad_porcentaje)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Porcentaje de Humedad</h3>
         <div class="popup-datos">
+          <div id="humdGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
             <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?>%
@@ -184,11 +185,11 @@ $conexion = new Conexion1();
 
   <div class="contenedor">
     <div class="overlay" id="overlay">
-      <div popup="pop4" class="temperatura popup" id="temperatura">
+      <div popup="pop4" class="temperatura popup" id="temperatura" style="width: 18.5rem;margin-top: 5rem;">
       <div class="exit"> <a class="exit-a" onclick="showPopup(temperatura)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Temperatura</h3>        
         <div class="popup-datos">
-        <div id="tempGraph" style="height:270px;"></div>
+        <div id="tempGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
             <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
@@ -213,3 +214,38 @@ $conexion = new Conexion1();
 
   <script src="vistas/js/main.js"></script>
 
+  <?php     
+    $tiempos = $conexion->getTime();
+    $temp    = $conexion->getDatos(2);
+    $humedad    = $conexion->getDatos(3);
+  ?>
+
+<script type="text/javascript">
+    // obtenemos el array de valores mediante la conversion a json del
+    // array de php
+    var rawData=<?php echo json_encode($temp);?>;    
+    var rawHumedad=<?php echo json_encode($humedad);?>;
+    var rawTime=<?php echo json_encode($tiempos);?>;    
+    TEMPGRAPH = document.getElementById('tempGraph');
+    HUMEDADGRAPH = document.getElementById('humdGraph');
+    // Mostramos los valores del array
+    var dataTemp = [];    
+    var tiempos = [];
+    var dataHumedad =[];
+    for(var i=0;i<rawData.length;i++)
+    {
+        dataTemp.push(rawData[i][0]);
+        tiempos.push(rawTime[i][0]);
+        dataHumedad.push(rawHumedad[i][0]);
+    }
+    console.log(dataTemp);
+    Plotly.newPlot( TEMPGRAPH, [{
+	  x: tiempos,
+	  y: dataTemp }], {
+	  margin: { t: 0 } } );
+
+    Plotly.newPlot( HUMEDADGRAPH, [{
+	  x: tiempos,
+	  y: dataHumedad }], {
+	  margin: { t: 0 } } );
+</script>
