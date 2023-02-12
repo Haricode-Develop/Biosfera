@@ -10,29 +10,29 @@ $conexion = new Conexion1();
   <ul id="social-sidebar">
     <li>
       <a id="btnIcon" onclick="showPopup(popup)">
-        <i class="fa-solid fa-user"></i>
+      <lord-icon src="https://cdn.lordicon.com/ajkxzzfb.json" trigger="hover"></lord-icon>
         <span>Usuario</span>
       </a>
     </li>
     <li>
       <a href="#">
-        <i class="fa-solid fa-satellite-dish"></i>
+      <lord-icon src="https://cdn.lordicon.com/psaebtij.json" trigger="hover"></lord-icon>
         <span>Satelital</span>
       </a>
     <li>
       <a href="#">
-        <i class="fa-solid fa-cloud-sun-rain"></i>
+      <lord-icon src="https://cdn.lordicon.com/qrodhbts.json" trigger="hover"></lord-icon>
         <span>Clima</span>
       </a>
     </li>
     <li class="submenu-nav-1">
       <a onclick="showPopup(submenuEstacionesGeneral)">
-        <i class="fa-solid fa-layer-group li-submenu-opciones"></i>
+      <lord-icon src="https://cdn.lordicon.com/txmlvqat.json" trigger="hover"></lord-icon>
         <span>Opciones</span>
       </a>
       <ul class="submenus-nav" id="idEstaciones-menu">
         <li class=""><a  class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 1</a>
-          <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" style="">
+          <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" >
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
@@ -42,7 +42,7 @@ $conexion = new Conexion1();
           </ul>
         </li>
         <li class=""><a class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 2</a>
-          <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="">
+          <ul id="submenuEstaciones2" class="submenus-nav-menu-2">
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
@@ -99,6 +99,7 @@ $conexion = new Conexion1();
   <div class="contenedor">
     <div class="overlay" id="overlay">
       <div class="popup" id="popup">
+      <div class="exit"> <a class="exit-a" onclick="showPopup(popup)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
         <h3>Inicio de Sesión</h3>
         <form action="" class="formulario">
           <fieldset>
@@ -185,8 +186,9 @@ $conexion = new Conexion1();
     <div class="overlay" id="overlay">
       <div popup="pop4" class="temperatura popup" id="temperatura">
       <div class="exit"> <a class="exit-a" onclick="showPopup(temperatura)"><img src="vistas/img/exit.svg" alt="exit"></a></div>
-        <h3>Temperatura</h3>
+        <h3>Temperatura</h3>        
         <div class="popup-datos">
+        <div id="tempGraph" style="height:270px;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
             <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
@@ -210,3 +212,4 @@ $conexion = new Conexion1();
   </div>
 
   <script src="vistas/js/main.js"></script>
+
