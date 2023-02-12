@@ -31,33 +31,33 @@ $conexion = new Conexion1();
         <span>Opciones</span>
       </a>
       <ul class="submenus-nav" id="idEstaciones-menu">
-        <li class=""><a  class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 1</a>
+        <li class=""><a  class="extender submenus-nav-high" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 1</a>
           <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" >
-            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a class="submenus-nav-high" id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
                 Viento</a></li>
-            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            <li><a class="submenus-nav-low" id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
             </li>
           </ul>
         </li>
         <li class=""><a class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 2</a>
           <ul id="submenuEstaciones2" class="submenus-nav-menu-2">
-            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a class="submenus-nav-high" id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
                 Viento</a></li>
-            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            <li><a class="submenus-nav-low" id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
             </li>
           </ul>
         </li>
-        <li class=""><a class="extender" style="width:100%;"onclick="showPopup(submenuEstaciones3)">Estacion 3</a>
+        <li class=""><a  class="extender submenus-nav-low" style="width:100%;"onclick="showPopup(submenuEstaciones3)">Estacion 3</a>
           <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="top: 104px;">
-            <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
+            <li><a class="submenus-nav-high" id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
                 Viento</a></li>
-            <li><a id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
+            <li><a class="submenus-nav-low" id="btnIcon" onclick="showPopup(direccion_viento)" style="width:100%;">Direccion del Viento</a>
             </li>
           </ul>
         </li>
