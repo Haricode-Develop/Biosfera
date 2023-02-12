@@ -32,7 +32,7 @@ $conexion = new Conexion1();
       </a>
       <ul class="submenus-nav" id="idEstaciones-menu">
         <li class=""><a  class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 1</a>
-          <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" style="">
+          <ul id="submenuEstaciones2" style="width:100%;" class="submenus-nav-menu-2" >
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
@@ -42,7 +42,7 @@ $conexion = new Conexion1();
           </ul>
         </li>
         <li class=""><a class="extender" style="width:100%;" onclick="showPopup(submenuEstaciones2)">Estacion 2</a>
-          <ul id="submenuEstaciones2" class="submenus-nav-menu-2" style="">
+          <ul id="submenuEstaciones2" class="submenus-nav-menu-2">
             <li><a id="btnIcon" onclick="showPopup(temperatura)" style="width:100%;">Temperatura</a></li>
             <li><a id="btnIcon" onclick="showPopup(humedad_porcentaje)" style="width:100%;">Humedad</a></li>
             <li><a id="btnIcon" onclick="showPopup(velocidad_viento)" style="width:100%;"> Velocidad del
@@ -212,20 +212,4 @@ $conexion = new Conexion1();
   </div>
 
   <script src="vistas/js/main.js"></script>
-  <?php 
-    $tiempos = $conexion->getTime();
-    $temp    = $conexion->getDatos(2);
-  ?>
 
-<script type="text/javascript">
-    // obtenemos el array de valores mediante la conversion a json del
-    // array de php
-    var arrayJS=<?php echo json_encode($temp);?>;
- 
-    // Mostramos los valores del array
-    for(var i=0;i<arrayJS.length;i++)
-    {
-        document.write("<br>"+arrayJS[i]);
-    }
-</script>
-  
