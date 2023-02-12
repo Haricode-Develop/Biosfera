@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="vistas/css/normalize.css">
     <link rel="stylesheet" href="vistas/css/style.css">
     <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <title>Biosfera</title>
     <?php $url = ruta::ctrRuta(); ?>
 </head>

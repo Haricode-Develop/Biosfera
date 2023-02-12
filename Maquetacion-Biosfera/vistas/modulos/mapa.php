@@ -10,24 +10,24 @@ $conexion = new Conexion1();
   <ul id="social-sidebar">
     <li>
       <a id="btnIcon" onclick="showPopup(popup)">
-        <i class="fa-solid fa-user"></i>
+      <lord-icon src="https://cdn.lordicon.com/ajkxzzfb.json" trigger="hover"></lord-icon>
         <span>Usuario</span>
       </a>
     </li>
     <li>
       <a href="#">
-        <i class="fa-solid fa-satellite-dish"></i>
+      <lord-icon src="https://cdn.lordicon.com/psaebtij.json" trigger="hover"></lord-icon>
         <span>Satelital</span>
       </a>
     <li>
       <a href="#">
-        <i class="fa-solid fa-cloud-sun-rain"></i>
+      <lord-icon src="https://cdn.lordicon.com/qrodhbts.json" trigger="hover"></lord-icon>
         <span>Clima</span>
       </a>
     </li>
     <li class="submenu-nav-1">
       <a onclick="showPopup(submenuEstacionesGeneral)">
-        <i class="fa-solid fa-layer-group li-submenu-opciones"></i>
+      <lord-icon src="https://cdn.lordicon.com/txmlvqat.json" trigger="hover"></lord-icon>
         <span>Opciones</span>
       </a>
       <ul class="submenus-nav" id="idEstaciones-menu">
