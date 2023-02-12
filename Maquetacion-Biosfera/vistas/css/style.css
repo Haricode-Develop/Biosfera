@@ -441,14 +441,15 @@ ol {
 }
 
 .submenu-nav-1 ul {
-   display: none;
-   position: absolute;
+   transform:translate(9999px);
+   opacity: 0; 
 }
 
 .submenu-nav-1:hover>ul {
-   display: block;
-   transition:visibility all 0.5s;
-    
+   position: absolute;
+   transition: opacity 0.7s linear;  
+   transform:translate(0);
+   opacity: 1;
 }
 
 .submenus-opciones {
@@ -504,14 +505,18 @@ width: 100%;
 }
 
 .submenus-nav li ul {
-   display: none;
+   /*display: none;
    position: absolute;
-   min-width: 140px;
+   min-width: 140px;*/
+   position: absolute;
+   transform:translate(9999px);
+   opacity: 0;  
 }
 
 .submenus-nav li:hover>ul {
-   display: block;
-   transition: all 0.5s;
+   transition: opacity 0.7s linear;  
+   transform:translate(0);
+   opacity: 1;
 }
 
 /*SUBMENUS FINAL*/
