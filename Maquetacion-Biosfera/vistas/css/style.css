@@ -260,13 +260,13 @@ a {
    color: #fff;
    text-decoration: none;
    display: block;
-   height: 36%;
+   height: 43%;
    width: 250px;
    font-size: 14px;
    position: absolute;
    z-index: 10;
-   left: 104px;
-   bottom: 50px;
+   left: 64px;
+   bottom: 20px;
    text-align: center;
    border-radius: 20px;
    padding: 0;
@@ -495,7 +495,13 @@ width: 100%;
    display: block;
    font-size: 10px;
 }
+.submenus-nav-high {
 
+   border-radius: 15px 15px 0px 0px!important;
+}
+.submenus-nav-low {
+   border-radius: 0px 0px 15px 15px!important;
+}
 
 .submenus-nav li a:hover {
    background-color: rgba(255, 255, 255, 0.7);

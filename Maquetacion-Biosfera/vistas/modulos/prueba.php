@@ -8,18 +8,21 @@
 <script type="text/javascript">
     // obtenemos el array de valores mediante la conversion a json del
     // array de php
-    var arrayJS=<?php echo json_encode($temp);?>;    
-    console.log(arrayJS);
+    var arrayData=<?php echo json_encode($temp);?>; 
+    var arrayTime=<?php echo json_encode($tiempos);?>; 
+    console.log(arrayData);
     TESTER = document.getElementById('tester');
     // Mostramos los valores del array
     var datos = [];
-    for(var i=0;i<arrayJS.length;i++)
+    var tiempo = [];
+    for(var i=0;i<arrayData.length;i++)
     {
-        datos.push(arrayJS[i][0]);
+        datos.push(arrayData[i][0]);
+        tiempo.push(arrayTime[i][0]);
     }
     console.log(datos);
     Plotly.newPlot( TESTER, [{
-	x: [1, 2, 3, 4, 5, 6],
+	x: tiempo,
 	y: datos }], {
 	margin: { t: 0 } } );
 </script>
