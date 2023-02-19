@@ -7,12 +7,12 @@ class Conexion1
     //constructor para probar la conexion
     public function __construct()
     {
-        $this->connection = new mysqli('localhost', 'root', '', 'test');
+        $this->connection = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');
     }
     //esta funcion recibe los parametros del formulario de registro y los mete a la bd.
     public function insertInformation($nombre, $apellido, $correo, $clave, $ciudad)
     {
-        $connection2 = new mysqli('localhost', 'root', '', 'test');
+        $connection2 = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION';
         $queryInsertion = ('INSERT INTO usuarios2 (nombre, apellido, correo, clave, ciudad) VALUES (\'' . $nombre . '\',\'' . $apellido . '\',\'' . $correo . '\',aes_encrypt(\'' . $clave . '\', \'prueba\'),\'' . $ciudad . '\');');
         $result = mysqli_query($connection2, $queryInsertion);
         if ($result) {
@@ -20,11 +20,11 @@ class Conexion1
         } else {
             return false;
         }
-    }
+    }    
     public function datosVentanaPrincipal($datoEspecifico)
     {
-        $connection = new mysqli('localhost', 'root', '', 'test');
-        $queryVentanaPrincipal = ('SELECT * FROM datos_principal ORDER by Id DESC LIMIT 1;');
+        $connection = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');
+        $queryVentanaPrincipal = ('SELECT * FROM MeasuresNew ORDER by Id DESC LIMIT 1;');
         $result = mysqli_query($connection, $queryVentanaPrincipal);
         if ($result) {
             $row = mysqli_fetch_array($result);
@@ -43,7 +43,7 @@ class Conexion1
     }
     
     public function getDatos($opt){
-        $connection= new mysqli('localhost', 'root', '', 'weatherstation');        
+        $connection= new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');        
         $querySelection = "";
         if($opt === 1){
             $querySelection = ('SELECT pressure FROM measures01');
@@ -78,7 +78,7 @@ class Conexion1
     }
 
     public function getTime(){
-        $connection= new mysqli('localhost', 'root', '', 'weatherstation');        
+        $connection= new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');        
         $querySelection = ('SELECT times FROM measures01');
         $resultQuery = mysqli_query($connection, $querySelection);
         
