@@ -73,19 +73,19 @@ $conexion = new Conexion1();
     <?php //$clase->datosVentanaPrincipal('Temperatura') ?>
     <li>
       <i class="fa-solid fa-temperature-three-quarters"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+      <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
     </li>
     <li><i class="fa-solid fa-cloud-rain"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
     </li>
     <li><i class="fa-solid fa-droplet"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('Humedad_relativa')); ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
     </li>
     <li><i class="fa-solid fa-wind"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> Km/h
+      <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> Km/h
     </li>
     <li><i class="fa-solid fa-arrow-right"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+      <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
     </li>
   </ul>
   <div id="info">
@@ -134,11 +134,11 @@ $conexion = new Conexion1();
           <div id="humdGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?>%
+            <?php echo ($conexion->datosVentanaPrincipal('humidity')); ?>%
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
           </p>
         </div>
       </div>
@@ -153,11 +153,11 @@ $conexion = new Conexion1();
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
           </p>
         </div>
       </div>
@@ -172,11 +172,11 @@ $conexion = new Conexion1();
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+            <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
+            <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
           </p>
         </div>
       </div>
@@ -192,11 +192,11 @@ $conexion = new Conexion1();
         <div id="tempGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+            <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
+            <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
           </p>
         </div>
       </div>
