@@ -4,7 +4,7 @@ function initMap() {
 
     // Create map
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 14.7666661, lng: -91.264618},
+        center: {lat: 14.745000, lng: -90.967500},
         zoom: 15        
     });
 
@@ -36,7 +36,7 @@ function initMap() {
       });
   }
 
-  Markers(14.7666661, -91.264618, 'Estacion 1', 'Primer Estación de Instituo Bisofera')
+  Markers(14.745000, -90.967500, 'Estacion 1', 'Primer Estación de Instituo Bisofera')
   
     
 }

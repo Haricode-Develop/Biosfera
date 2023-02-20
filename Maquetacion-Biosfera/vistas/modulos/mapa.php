@@ -76,10 +76,10 @@ $conexion = new Conexion1();
       <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
     </li>
     <li><i class="fa-solid fa-cloud-rain"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
     </li>
     <li><i class="fa-solid fa-droplet"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
     </li>
     <li><i class="fa-solid fa-wind"></i>
       <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> Km/h
@@ -138,7 +138,7 @@ $conexion = new Conexion1();
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('humidity')); ?> KM/H
           </p>
         </div>
       </div>
