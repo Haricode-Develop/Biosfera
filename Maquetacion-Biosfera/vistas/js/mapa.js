@@ -12,7 +12,7 @@ function initMap() {
     // Array to hold search options
     var markers = [];
     
-    var infowincontent = '<div style="width:200px">CONTENT</div>';
+    var infowincontent = '<div style="width:200px" ><h2>CONTENT</h2> <br><div><img width="100%" src="vistas/img/estacion1-biosfera.jpg" alt="Imagen de la estación"></div></div>';
 
      // Clinton Pullout Marker
 
@@ -36,7 +36,7 @@ function initMap() {
       });
   }
 
-  Markers(14.7666661, -91.264618, 'Estacion 1', 'Primer Estación de Instituo Bisofera')
+  Markers(14.7666661, -91.264618, 'Estacion 1', 'Primera Estación del Instituto Biosfera')
   
     
 }

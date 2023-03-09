@@ -74,19 +74,19 @@ $conexion = new Conexion1();
     <?php //$clase->datosVentanaPrincipal('Temperatura') ?>
     <li>
       <i class="fa-solid fa-temperature-three-quarters"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
+      <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
     </li>
     <li><i class="fa-solid fa-cloud-rain"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
+      <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje') )?> %
     </li>
     <li><i class="fa-solid fa-droplet"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
+      <?php echo ($conexion->datosVentanaPrincipal('Humedad_relativa') )?> %
     </li>
     <li><i class="fa-solid fa-wind"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> Km/h
+      <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> Km/h
     </li>
     <li><i class="fa-solid fa-arrow-right"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
+      <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
     </li>
   </ul>
   <div id="info">
@@ -135,11 +135,11 @@ $conexion = new Conexion1();
           <div id="humdGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('humidity')); ?>%
+            <?php echo ($conexion->datosVentanaPrincipal('Humedad_porcentaje')); ?>%
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
           </p>
         </div>
       </div>
@@ -154,11 +154,11 @@ $conexion = new Conexion1();
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> KM/H
+            <?php echo ($conexion->datosVentanaPrincipal('Velocidad_viento')); ?> KM/H
           </p>
         </div>
       </div>
@@ -173,11 +173,11 @@ $conexion = new Conexion1();
         <div class="popup-datos">
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
+            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('winddirection')); ?>
+            <?php echo ($conexion->datosVentanaPrincipal('Direccion_viento')); ?>
           </p>
         </div>
       </div>
@@ -193,11 +193,11 @@ $conexion = new Conexion1();
         <div id="tempGraph" style="height:300px; width:300px; margin:0;"></div>
           <p style="font-size:12px;">Ultimas 24 horas</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
+            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
           </p>
           <p style="font-size:12px;">Ultimas hora</p>
           <p>
-            <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
+            <?php echo ($conexion->datosVentanaPrincipal('Temperatura')); ?>°C
           </p>
         </div>
       </div>
@@ -227,8 +227,7 @@ $conexion = new Conexion1();
     var rawData=<?php echo json_encode($temp);?>;    
     var rawHumedad=<?php echo json_encode($humedad);?>;
     var rawTime=<?php echo json_encode($tiempos);?>;    
-    TEMPGRAPH = document.getElementById('tempGraph');
-    HUMEDADGRAPH = document.getElementById('humdGraph');
+    TEMPGRAPH = document.getElementById('tempGraph');    
     // Mostramos los valores del array
     var dataTemp = [];    
     var tiempos = [];
@@ -238,16 +237,42 @@ $conexion = new Conexion1();
         dataTemp.push(rawData[i][0]);
         tiempos.push(rawTime[i][0]);
         dataHumedad.push(rawHumedad[i][0]);
-    }
-    console.log(dataTemp);
+    }    
     Plotly.newPlot( TEMPGRAPH, [{
 	  x: tiempos,
 	  y: dataTemp }], {
 	  margin: { t: 0 } } );
 
-    Plotly.newPlot( HUMEDADGRAPH, [{
-	  x: tiempos,
-	  y: dataHumedad }], {
-	  margin: { t: 0 } } );
+    var trace1 = {
+      x: tiempos,
+      y: dataTemp,
+      name: 'Temperatura',
+      type: 'scatter'
+    };
+
+    var trace2 = {
+      x: tiempos,
+      y: dataHumedad,
+      name: 'Humedad',
+      yaxis: 'y2',
+      type: 'scatter'
+    };
+  
+    var layout = {
+    title: 'Gráfica de humedad',
+    yaxis: {title: 'Temperatura (C°)'},
+    yaxis2: {
+      title: 'Humedad (%)',
+      titlefont: {color: 'rgb(148, 103, 189)'},
+      tickfont: {color: 'rgb(148, 103, 189)'},
+      overlaying: 'y',
+      side: 'right'
+      }
+    };
+
+    var data = [trace1,trace2];
+
+    
+    Plotly.newPlot('humdGraph', data, layout);
 </script>
 </table>
