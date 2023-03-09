@@ -235,9 +235,9 @@ $conexion = new Conexion1();
     var dataHumedad =[];
     for(var i=0;i<rawData.length;i++)
     {
-        dataTemp.push(rawData[i][0]);
-        tiempos.push(rawTime[i][0]);
-        dataHumedad.push(rawHumedad[i][0]);
+        dataTemp.push(rawData?.[i]?.[0]);
+        tiempos.push(rawTime?.[i]?.[0]);
+        dataHumedad.push(rawHumedad?.[i]?.[0]);
     }
     console.log(dataTemp);
     Plotly.newPlot( TEMPGRAPH, [{
