@@ -7,12 +7,12 @@ class Conexion1
     //constructor para probar la conexion
     public function __construct()
     {
-        $this->connection = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');
+        $this->connection = new mysqli('172.27.220.200', 'usertest', 'wetterstation', 'WEATHERSTATION');
     }
     //esta funcion recibe los parametros del formulario de registro y los mete a la bd.
     public function insertInformation($nombre, $apellido, $correo, $clave, $ciudad)
     {
-        $connection2 = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION';
+        $connection2 = new mysqli('172.27.220.200', 'usertest', 'wetterstation', 'WEATHERSTATION');
         $queryInsertion = ('INSERT INTO usuarios2 (nombre, apellido, correo, clave, ciudad) VALUES (\'' . $nombre . '\',\'' . $apellido . '\',\'' . $correo . '\',aes_encrypt(\'' . $clave . '\', \'prueba\'),\'' . $ciudad . '\');');
         $result = mysqli_query($connection2, $queryInsertion);
         if ($result) {
@@ -23,8 +23,8 @@ class Conexion1
     }    
     public function datosVentanaPrincipal($datoEspecifico)
     {
-        $connection = new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');
-        $queryVentanaPrincipal = ('SELECT * FROM MeasuresNew ORDER by Id DESC LIMIT 1;');
+        $connection = new mysqli('172.27.220.200', 'usertest', 'wetterstation', 'WEATHERSTATION');
+        $queryVentanaPrincipal = ('SELECT * FROM MeasuresNew WHERE id = (SELECT MAX(id) FROM MeasuresNew);');
         $result = mysqli_query($connection, $queryVentanaPrincipal);
         if ($result) {
             $row = mysqli_fetch_array($result);
@@ -43,14 +43,15 @@ class Conexion1
     }
     
     public function getDatos($opt){
-        $connection= new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');        
+        $connection= new mysqli('172.27.220.200', 'usertest', 'wetterstation', 'WEATHERSTATION');        
         $querySelection = "";
+       
         if($opt === 1){
-            $querySelection = ('SELECT pressure FROM measures01');
+            $querySelection = ('SELECT pressure FROM MeasuresNew');
         }else if($opt === 2){
-            $querySelection = ('SELECT temperature FROM measures01');
+            $querySelection = ('SELECT temperature FROM MeasuresNew');
         }else if($opt === 3){
-            $querySelection = ('SELECT humidity FROM measures01');
+            $querySelection = ('SELECT humidity FROM MeasuresNew');
         }else if($opt === 4){
             $querySelection = ('SELECT windspeed FROM measures01');
         }else if($opt === 5){
@@ -78,8 +79,8 @@ class Conexion1
     }
 
     public function getTime(){
-        $connection= new mysqli('172.27.224.194', 'usertest', 'wetterstation', 'WEATHERSTATION');        
-        $querySelection = ('SELECT times FROM measures01');
+        $connection= new mysqli('172.27.220.200', 'usertest', 'wetterstation', 'WEATHERSTATION');        
+        $querySelection = ('SELECT times FROM MeasuresNew');
         $resultQuery = mysqli_query($connection, $querySelection);
         
         if ($resultQuery) {            

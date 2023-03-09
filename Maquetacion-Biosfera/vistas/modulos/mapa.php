@@ -2,6 +2,7 @@
 require_once('modelos/conexion.php');
 $conexion = new Conexion1();
 ?>
+<table>
 <div class="mapa-plantilla">
   <div id="logo">
     <img src="vistas/img/logo_completo.png" alt="">
@@ -76,10 +77,10 @@ $conexion = new Conexion1();
       <?php echo ($conexion->datosVentanaPrincipal('temperature')); ?>°C
     </li>
     <li><i class="fa-solid fa-cloud-rain"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
     </li>
     <li><i class="fa-solid fa-droplet"></i>
-      <?php echo ($conexion->datosVentanaPrincipal('humidity') ?> %
+      <?php echo ($conexion->datosVentanaPrincipal('humidity') )?> %
     </li>
     <li><i class="fa-solid fa-wind"></i>
       <?php echo ($conexion->datosVentanaPrincipal('windspeed')); ?> Km/h
@@ -249,3 +250,4 @@ $conexion = new Conexion1();
 	  y: dataHumedad }], {
 	  margin: { t: 0 } } );
 </script>
+</table>
